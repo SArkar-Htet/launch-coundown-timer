@@ -35,7 +35,7 @@ export default class Footer extends Component {
           </li>
         </ul>
         
-        <div class="attribution">
+        <div className="attribution">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
           Coded by <a href="#">Soe Arkar Htet</a>.
         </div>
