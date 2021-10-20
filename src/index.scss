@@ -1,0 +1,26 @@
+@import "./styles/functions";
+@import "./styles/variables";
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, $veryDarkBlack 30%, $bgSecondary 70%);
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: $font-md;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
