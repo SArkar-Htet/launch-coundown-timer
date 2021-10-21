@@ -5,7 +5,8 @@ export default class Countdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      endDate: new Date("Jan 01, 2022 00:00:00").getTime(),
+      // endDate: new Date("Jan 01, 2022 00:00:00").getTime(),
+      endDate: new Date("Oct 21, 2021 21:25:00").getTime(),
       distance: true,
       days: `00`,
       hours: `00`,
@@ -15,14 +16,10 @@ export default class Countdown extends Component {
   }
 
   componentDidMount() {
-    if (this.state.distance) {
-      this.timer = setInterval(
-        () => this.calculateTime(),
-        1000
-      );
-    } else {
-      clearInterval(this.timer);
-    }
+    this.timer = setInterval(
+      () => this.calculateTime(),
+      1000
+    );
   }
 
   componentWillUnmount() {
@@ -58,6 +55,7 @@ export default class Countdown extends Component {
         minutes: `00`,
         seconds: `00`,
       });
+      clearInterval(this.timer);
     }
   }
 
