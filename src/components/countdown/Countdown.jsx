@@ -78,9 +78,6 @@ export default class Countdown extends Component {
     return (
       <main className="countdown" style={{ 
         backgroundImage: `url(${bgImage})`,
-        backgroundRepeat: `no-repeat`,
-        backgroundSize: `375%`,
-        backgroundPosition: `center`,
       }}>
         <h1 className="countdown__title">{header}</h1>
         <div className="countdown__body">
