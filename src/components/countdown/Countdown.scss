@@ -11,10 +11,12 @@
   background-size: 375%;
   background-position: center;
 
+  @include breakpoint-up(medium) {
+    background-size: cover;
+  }
+
   @include breakpoint-up(large) {
     height: 75vh;
-    background-size: cover;
-    background-position: center;
   }
 
   &__title {
@@ -52,7 +54,7 @@
     box-shadow: 0px 5px 0px 0px rgb(25, 26, 36);
     overflow: hidden;
 
-    @include breakpoint-up(large) {
+    @include breakpoint-up(medium) {
       width: to-rem(140);
       height: to-rem(140);
       border-radius: to-rem(8);
@@ -69,7 +71,7 @@
       border-radius: 50%;
       z-index: 9;
 
-      @include breakpoint-up(large) {
+      @include breakpoint-up(medium) {
         width: 12px;
         height: 13px;
       }
@@ -83,7 +85,7 @@
       right: to-rem(-3);
     }
 
-    @include breakpoint-up(large) {
+    @include breakpoint-up(medium) {
       &::before {
         left: to-rem(-6);
       }
@@ -127,7 +129,7 @@
     text-transform: uppercase;
     letter-spacing: to-rem(2);
 
-    @include breakpoint-up(large) {
+    @include breakpoint-up(medium) {
       font-size: to-rem(12);
       padding-top: to-rem(28);
     }

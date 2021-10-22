@@ -12,9 +12,12 @@
   background-size: cover;
   background-position: right 18% bottom;
   
+  @include breakpoint-up(medium) {
+    background-position: right center;
+  }
+  
   @include breakpoint-up(large) {
     height: 25vh;
-    background-size: cover;
     background-position: center top;
   }
 
