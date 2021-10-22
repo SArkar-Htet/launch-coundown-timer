@@ -13,9 +13,6 @@ export default class Footer extends Component {
     return (
       <footer className="footer" style={{ 
           backgroundImage: `url(${bgImage})`,
-          backgroundRepeat: `no-repeat`,
-          backgroundSize: `cover`,
-          backgroundPosition: `right 17% bottom`,
         }}>
         <ul className="footer__social">
           <li className="footer__social__item">
