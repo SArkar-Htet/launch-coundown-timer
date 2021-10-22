@@ -19,6 +19,7 @@
     height: 75vh;
   }
   
+  // ipad pro
   @media screen and (min-width: 1024px) and (min-height: 1340px) {
     height: 80vh;
   }
@@ -38,7 +39,7 @@
     gap: to-rem(16);
   }
   
-  &__timer {
+  &__card {
     position: relative;
     width: to-rem(70);
     height: to-rem(70);
@@ -96,7 +97,7 @@
     }
   }
 
-  &__digits {
+  &__timer {
     display: flex;
     justify-content: center;
     align-items: center;

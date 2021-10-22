@@ -82,9 +82,9 @@ export default class Countdown extends Component {
         <h1 className="countdown__title">{header}</h1>
         <div className="countdown__body">
           <div className="countdown__item">
-            <div className="countdown__timer">
-              <span className="countdown__digits countdown__digits--top">{days}</span>
-              <span className="countdown__digits countdown__digits--bottom">{days}</span>
+            <div className="countdown__card">
+              <div className="countdown__timer countdown__timer--top">{days}</div>
+              <div className="countdown__timer countdown__timer--bottom">{days}</div>
             </div>
             <div className="countdown__stats">
               Days
@@ -92,9 +92,9 @@ export default class Countdown extends Component {
           </div>
           
           <div className="countdown__item">
-            <div className="countdown__timer">
-              <span className="countdown__digits countdown__digits--top">{hours}</span>
-              <span className="countdown__digits countdown__digits--bottom">{hours}</span>
+            <div className="countdown__card">
+              <div className="countdown__timer countdown__timer--top">{hours}</div>
+              <div className="countdown__timer countdown__timer--bottom">{hours}</div>
             </div>
             <div className="countdown__stats">
               Hours
@@ -102,9 +102,9 @@ export default class Countdown extends Component {
           </div>
           
           <div className="countdown__item">
-            <div className="countdown__timer">
-              <span className="countdown__digits countdown__digits--top">{minutes}</span>
-              <span className="countdown__digits countdown__digits--bottom">{minutes}</span>
+            <div className="countdown__card">
+              <div className="countdown__timer countdown__timer--top">{minutes}</div>
+              <div className="countdown__timer countdown__timer--bottom">{minutes}</div>
             </div>
             <div className="countdown__stats">
               Minutes
@@ -112,9 +112,9 @@ export default class Countdown extends Component {
           </div>
           
           <div className="countdown__item">
-            <div className="countdown__timer">
-              <span className="countdown__digits countdown__digits--top">{seconds}</span>
-              <span className="countdown__digits countdown__digits--bottom">{seconds}</span>
+            <div className="countdown__card">
+              <div className="countdown__timer countdown__timer--top">{seconds}</div>
+              <div className="countdown__timer countdown__timer--bottom">{seconds}</div>
             </div>
             <div className="countdown__stats">
               Seconds
