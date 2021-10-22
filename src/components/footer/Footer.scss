@@ -2,16 +2,19 @@
 @import "../styles/variables";
 @import "../styles/mixin";
 .footer {
-  height: 25vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: right 17% bottom;
-
+  background-size: cover;
+  background-position: right 18% bottom;
+  
   @include breakpoint-up(large) {
+    height: 25vh;
+    background-size: cover;
     background-position: center top;
   }
 

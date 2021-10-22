@@ -3,7 +3,7 @@
 @import "../styles/mixin";
 .countdown {
   text-align: center;
-  height: 75vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -12,6 +12,7 @@
   background-position: center;
 
   @include breakpoint-up(large) {
+    height: 75vh;
     background-size: cover;
     background-position: center;
   }
@@ -44,6 +45,7 @@
     align-items: center;
     justify-content: center;
     border-radius: to-rem(5);
+    background-color: $veryDarkBlack;
     color: $softRed;
     font-size: 32px;
     font-weight: $font-normal;
