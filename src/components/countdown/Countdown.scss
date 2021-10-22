@@ -18,6 +18,10 @@
   @include breakpoint-up(large) {
     height: 75vh;
   }
+  
+  @media screen and (min-width: 1024px) and (min-height: 1340px) {
+    height: 80vh;
+  }
 
   &__title {
     font-size: to-rem(20);
