@@ -55,9 +55,13 @@
 }
 
 .attribution {
-  padding: to-rem(30) 0 to-rem(5) 0;
+  padding: to-rem(20) 0 to-rem(5) 0;
   font-size: to-rem(10);
   color: $grayishBlue;
+
+  @include breakpoint-up(medium) {
+    padding-top: to-rem(30);
+  }
 
   a {
     color: $grayishBlue;
