@@ -41,7 +41,7 @@
 
     &__link {
       color: $grayishBlue;
-      transition: all ease-in-out 200ms;
+      @include easeInOut(all, 300ms);
 
       &:hover {
         color: $softRed;
@@ -65,7 +65,7 @@
 
   a {
     color: $grayishBlue;
-    transition: all ease-in-out 200ms;
+    @include easeInOut(all, 300ms);
 
     &:hover {
       color: $softRed;
