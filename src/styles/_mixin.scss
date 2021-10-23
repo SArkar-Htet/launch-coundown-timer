@@ -22,3 +22,8 @@ $breakpoints-down: ("small": "39.9375em","medium": "63.9375em", "large": "87.437
 @mixin  easeInOut($action, $dur) {
   transition: $action $dur ease-in-out;
 }
+
+// Animation
+@mixin animate($name) {
+	animation: $name 1000ms cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+}

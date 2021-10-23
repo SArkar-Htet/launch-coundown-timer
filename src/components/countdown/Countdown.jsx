@@ -27,9 +27,13 @@ export default class Countdown extends Component {
       // endDate: new Date("Oct 21, 2021 21:57:00").getTime(),
       distance: true,
       days: 0,
+      daysShuffle: true,
       hours: 0,
+      hoursShuffle: true,
       minutes: 0,
+      minutesShuffle: true,
       seconds: 0,
+      secondsShuffle: true,
     }
   }
 
@@ -45,14 +49,23 @@ export default class Countdown extends Component {
   }
 
   tick() {
-    const {timeDistance, days, hours, minutes, seconds} = calculateTime(this.state.endDate);
+    const state = this.state;
+    const {timeDistance, days, hours, minutes, seconds} = calculateTime(state.endDate);
+    const daysShuffle = days !== state.days ? !state.daysShuffle : state.daysShuffle;
+    const hoursShuffle = hours !== state.hours ? !state.hoursShuffle : state.hoursShuffle;
+    const minutesShuffle = minutes !== state.minutes ? !state.minutesShuffle : state.minutesShuffle;
+    const secondsShuffle = seconds !== state.seconds ? !state.secondsShuffle : state.secondsShuffle;
 
     if (timeDistance > 0) {
       this.setState({
         days,
+        daysShuffle,
         hours,
+        hoursShuffle,
         minutes,
+        minutesShuffle,
         seconds,
+        secondsShuffle,
       });
     } else {
       this.setState({
@@ -68,7 +81,7 @@ export default class Countdown extends Component {
 
   render() {
     const {bgImage} = this.props;
-    const {distance, days, hours, minutes, seconds} = this.state;
+    const {distance, days, daysShuffle, hours, hoursShuffle, minutes, minutesShuffle, seconds, secondsShuffle} = this.state;
     const header = distance ? "We're launching soon" : "Time's Up!";
     console.log(distance);
     return (
@@ -77,10 +90,10 @@ export default class Countdown extends Component {
       }}>
         <h1 className="countdown__title">{header}</h1>
         <div className="countdown__body">
-          <CountdownItem digit={days} stats='Days' />
-          <CountdownItem digit={hours} stats='Hours' />
-          <CountdownItem digit={minutes} stats="Minutes" />
-          <CountdownItem digit={seconds} stats="Seconds" />
+          <CountdownItem digit={days} stats='Days' shuffle={daysShuffle} />
+          <CountdownItem digit={hours} stats='Hours' shuffle={hoursShuffle} />
+          <CountdownItem digit={minutes} stats='Minutes' shuffle={minutesShuffle} />
+          <CountdownItem digit={seconds} stats='Seconds' shuffle={secondsShuffle} />
         </div>
       </main>
     )
