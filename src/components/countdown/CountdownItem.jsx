@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import './CountdownItem.scss'
+import StaticCard from './cards/StaticCard'
+import './CountdownItem.scss';
+
+const clockFormat = (digit) => digit < 10 ? `0${digit}` : digit;
 
 export default class CountdownItem extends Component {
   constructor(props) {
@@ -7,11 +10,17 @@ export default class CountdownItem extends Component {
   }
   render() {
     const {digit, stats} = this.props;
+    let currentDigit = digit;
+    let previousDigit = digit + 1;
+
+    currentDigit = clockFormat(currentDigit);
+    previousDigit = clockFormat(previousDigit);
+
     return (
       <div className="countdown__item">
         <div className="countdown__unit__container">
-          <div className="countdown__card countdown__card--top">{digit}</div>
-          <div className="countdown__card countdown__card--bottom">{digit}</div>
+          <StaticCard digit={currentDigit} position='top' />
+          <StaticCard digit={previousDigit} position='bottom' />
         </div>
         <div className="countdown__stats">
           {stats}

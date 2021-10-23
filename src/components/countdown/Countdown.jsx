@@ -11,11 +11,6 @@ const calculateTime = (endDate) => {
   let minutes = Math.floor((timeDistance % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((timeDistance % (1000 * 60)) / 1000);
 
-  days = days < 10 ? `0${days}` : days;
-  hours = hours < 10 ? `0${hours}` : hours;
-  minutes = minutes < 10 ? `0${minutes}` : minutes;
-  seconds = seconds < 10 ? `0${seconds}` : seconds;
-
   return {
     timeDistance,
     days,
@@ -31,10 +26,10 @@ export default class Countdown extends Component {
       endDate: new Date("Jan 01, 2022 00:00:00").getTime(),
       // endDate: new Date("Oct 21, 2021 21:57:00").getTime(),
       distance: true,
-      days: `00`,
-      hours: `00`,
-      minutes: `00`,
-      seconds: `00`,
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
     }
   }
 
@@ -62,10 +57,10 @@ export default class Countdown extends Component {
     } else {
       this.setState({
         distance: false,
-        days: `00`,
-        hours: `00`,
-        minutes: `00`,
-        seconds: `00`,
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
       });
       clearInterval(this.timer);
     }
