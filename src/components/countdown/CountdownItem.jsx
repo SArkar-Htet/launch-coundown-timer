@@ -10,9 +10,15 @@ export default class CountdownItem extends Component {
     super(props);
   }
   render() {
-    const {digit, stats, shuffle} = this.props;
+    const {digit, unit, shuffle} = this.props;
     let currentDigit = digit;
     let previousDigit = digit + 1;
+
+    if (unit !== 'Hours') {
+      previousDigit = previousDigit === 60 ? 0 : previousDigit;
+    } else {
+      previousDigit = previousDigit === 24 ? 0 : previousDigit;
+    }
 
     currentDigit = clockFormat(currentDigit);
     previousDigit = clockFormat(previousDigit);
@@ -32,7 +38,7 @@ export default class CountdownItem extends Component {
           <AnimatedCard digit={digit2} animation={animation2} />
         </div>
         <div className="countdown__stats">
-          {stats}
+          {unit}
         </div>
       </div>
     )

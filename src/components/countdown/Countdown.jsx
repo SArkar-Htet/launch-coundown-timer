@@ -24,7 +24,7 @@ export default class Countdown extends Component {
     super(props);
     this.state = {
       endDate: new Date("Jan 01, 2022 00:00:00").getTime(),
-      // endDate: new Date("Oct 21, 2021 21:57:00").getTime(),
+      // endDate: new Date("Oct 23, 2021 22:33:00").getTime(),
       distance: true,
       days: 0,
       daysShuffle: true,
@@ -90,10 +90,10 @@ export default class Countdown extends Component {
       }}>
         <h1 className="countdown__title">{header}</h1>
         <div className="countdown__body">
-          <CountdownItem digit={days} stats='Days' shuffle={daysShuffle} />
-          <CountdownItem digit={hours} stats='Hours' shuffle={hoursShuffle} />
-          <CountdownItem digit={minutes} stats='Minutes' shuffle={minutesShuffle} />
-          <CountdownItem digit={seconds} stats='Seconds' shuffle={secondsShuffle} />
+          <CountdownItem digit={days} unit='Days' shuffle={daysShuffle} />
+          <CountdownItem digit={hours} unit='Hours' shuffle={hoursShuffle} />
+          <CountdownItem digit={minutes} unit='Minutes' shuffle={minutesShuffle} />
+          <CountdownItem digit={seconds} unit='Seconds' shuffle={secondsShuffle} />
         </div>
       </main>
     )
