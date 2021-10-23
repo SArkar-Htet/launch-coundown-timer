@@ -20,7 +20,7 @@ export default class FooterItem extends Component {
     }
     return (
       <li className="footer__social__item">
-        <a href={path} className="footer__social__link">
+        <a href={path} className="footer__social__link" aria-label={type} rel="noopener noreferrer" target="_blank" >
           {icon}
         </a>
       </li>

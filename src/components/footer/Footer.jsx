@@ -6,7 +6,7 @@ export default class Footer extends Component {
     super(props);
   }
   render() {
-    const {bgImage, publicUrl} = this.props;
+    const {bgImage} = this.props;
     // const faceBook = publicUrl+"/images/icon-facebook.svg";
     // const 
     return (
@@ -20,8 +20,8 @@ export default class Footer extends Component {
         </ul>
         
         <div className="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-          Coded by <a href="#">Soe Arkar Htet</a>.
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
+          Coded by <a href="https://www.facebook.com/soearkar.htet.526/">Soe Arkar Htet</a>.
         </div>
       </footer>
     )

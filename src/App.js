@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Countdown bgImage={bgStarURL} />
-      <Footer bgImage={patternHillURL} publicUrl={publicUrl} />
+      <Footer bgImage={patternHillURL} />
     </div>
   );
 }
