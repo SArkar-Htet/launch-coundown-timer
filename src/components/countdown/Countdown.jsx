@@ -34,6 +34,7 @@ export default class Countdown extends Component {
       hours: `00`,
       minutes: `00`,
       seconds: `00`,
+      flip: false,
     }
   }
 
@@ -72,8 +73,9 @@ export default class Countdown extends Component {
 
   render() {
     const {bgImage} = this.props;
-    const {distance, days, hours, minutes, seconds} = this.state;
+    const {distance, days, hours, minutes, seconds, flip} = this.state;
     const header = distance ? "We're launching soon" : "Time's Up!";
+    console.log("Flip", flip);
     console.log(distance);
     return (
       <main className="countdown" style={{ 
@@ -114,6 +116,12 @@ export default class Countdown extends Component {
           <div className="countdown__item">
             <div className="countdown__card">
               <div className="countdown__timer countdown__timer--top">{seconds}</div>
+              {/* <div className="countdown__timer countdown__timer--center">
+                <div className={`flip__card ${flip ? `flip`:``}`}>
+                  <div className="flip__card flip__card--top">{seconds}</div>
+                  <div className="flip__card flip__card--bottom">{seconds}</div>
+                </div>
+              </div> */}
               <div className="countdown__timer countdown__timer--bottom">{seconds}</div>
             </div>
             <div className="countdown__stats">

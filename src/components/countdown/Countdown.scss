@@ -97,8 +97,9 @@
     }
   }
 
-  &__timer {
+  &__timer, &__timer .flip__card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -106,9 +107,10 @@
     right: 0;
     bottom: 0;
     left: 0;
-    height: 50%;
     overflow: hidden;
+  }
 
+  &__timer {
     &--top {
       padding-top: 50%;
       background-color: hsla(236, 21%, 26%, 0.5);
@@ -120,7 +122,41 @@
       padding-bottom: 50%;
       background-color: $darkDesaturatedBlue;
     }
+
+    // &--center {
+    //   perspective: 1000px;
+    // }
+
+    &--top, &--bottom {
+      height: 50%;
+    }
   }
+
+  // .flip {
+  //   transition: transform 1s;
+  //   transform-style: preserve-3d;
+  //   transform: rotateX(180deg);
+  //   &__card {
+  //     &--top, &--bottom {
+  //       width: 100%;
+  //       height: 50%;
+  //       z-index: 1;
+  //     }
+      
+  //     &--top {
+  //       padding-top: 50%;
+  //       background-color: hsla(236, 21%, 26%, 0.5);
+  //       color: hsla(345, 95%, 68%, 0.7);
+  //     }
+
+  //     &--bottom {
+  //       top: 50%;
+  //       padding-bottom: 50%;
+  //       background-color: $darkDesaturatedBlue;
+  //       // transform: rotateX(180deg);
+  //     }
+  //   }
+  // }
 
   &__stats {
     padding-top: to-rem(13);
