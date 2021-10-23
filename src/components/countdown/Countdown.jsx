@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CountdownItem from './CountdownItem';
 import './Countdown.scss';
 
 const calculateTime = (endDate) => {
@@ -34,7 +35,6 @@ export default class Countdown extends Component {
       hours: `00`,
       minutes: `00`,
       seconds: `00`,
-      flip: false,
     }
   }
 
@@ -73,9 +73,8 @@ export default class Countdown extends Component {
 
   render() {
     const {bgImage} = this.props;
-    const {distance, days, hours, minutes, seconds, flip} = this.state;
+    const {distance, days, hours, minutes, seconds} = this.state;
     const header = distance ? "We're launching soon" : "Time's Up!";
-    console.log("Flip", flip);
     console.log(distance);
     return (
       <main className="countdown" style={{ 
@@ -83,52 +82,10 @@ export default class Countdown extends Component {
       }}>
         <h1 className="countdown__title">{header}</h1>
         <div className="countdown__body">
-          <div className="countdown__item">
-            <div className="countdown__card">
-              <div className="countdown__timer countdown__timer--top">{days}</div>
-              <div className="countdown__timer countdown__timer--bottom">{days}</div>
-            </div>
-            <div className="countdown__stats">
-              Days
-            </div>
-          </div>
-          
-          <div className="countdown__item">
-            <div className="countdown__card">
-              <div className="countdown__timer countdown__timer--top">{hours}</div>
-              <div className="countdown__timer countdown__timer--bottom">{hours}</div>
-            </div>
-            <div className="countdown__stats">
-              Hours
-            </div>
-          </div>
-          
-          <div className="countdown__item">
-            <div className="countdown__card">
-              <div className="countdown__timer countdown__timer--top">{minutes}</div>
-              <div className="countdown__timer countdown__timer--bottom">{minutes}</div>
-            </div>
-            <div className="countdown__stats">
-              Minutes
-            </div>
-          </div>
-          
-          <div className="countdown__item">
-            <div className="countdown__card">
-              <div className="countdown__timer countdown__timer--top">{seconds}</div>
-              {/* <div className="countdown__timer countdown__timer--center">
-                <div className={`flip__card ${flip ? `flip`:``}`}>
-                  <div className="flip__card flip__card--top">{seconds}</div>
-                  <div className="flip__card flip__card--bottom">{seconds}</div>
-                </div>
-              </div> */}
-              <div className="countdown__timer countdown__timer--bottom">{seconds}</div>
-            </div>
-            <div className="countdown__stats">
-              Seconds
-            </div>
-          </div>
-
+          <CountdownItem digit={days} stats='Days' />
+          <CountdownItem digit={hours} stats='Hours' />
+          <CountdownItem digit={minutes} stats="Minutes" />
+          <CountdownItem digit={seconds} stats="Seconds" />
         </div>
       </main>
     )

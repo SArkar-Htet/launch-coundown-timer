@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
+import FooterItem from './FooterItem';
 import './Footer.scss';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import InstagramIcon from '@mui/icons-material/Instagram';
 export default class Footer extends Component {
   constructor(props) {
     super(props);
@@ -10,26 +8,15 @@ export default class Footer extends Component {
   render() {
     const {bgImage, publicUrl} = this.props;
     // const faceBook = publicUrl+"/images/icon-facebook.svg";
+    // const 
     return (
       <footer className="footer" style={{ 
           backgroundImage: `url(${bgImage})`,
         }}>
         <ul className="footer__social">
-          <li className="footer__social__item">
-            <a href="https://launch-countdown-frontendmentor-claudiabdm.netlify.app/" className="footer__social__link">
-              <FacebookIcon fontSize="large" className="footer__social__icon" />
-            </a>
-          </li>
-          <li className="footer__social__item">
-            <a href="https://launch-countdown-frontendmentor-claudiabdm.netlify.app/" className="footer__social__link">
-              <PinterestIcon fontSize="large" className="footer__social__icon" />
-            </a>
-          </li>
-          <li className="footer__social__item">
-            <a href="https://launch-countdown-frontendmentor-claudiabdm.netlify.app/" className="footer__social__link">
-              <InstagramIcon fontSize="large" className="footer__social__icon" />
-            </a>
-          </li>
+          <FooterItem type="facebook" />
+          <FooterItem type="pinterest" />
+          <FooterItem type="instagram" />
         </ul>
         
         <div className="attribution">
