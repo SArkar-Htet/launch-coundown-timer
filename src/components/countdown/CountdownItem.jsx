@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import StaticCard from './cards/StaticCard';
 import AnimatedCard from './cards/AnimatedCard';
+import {clockFormat} from '../../functions/clockFormat';
 import './CountdownItem.scss';
-
-const clockFormat = (digit) => digit < 10 ? `0${digit}` : digit;
 
 export default class CountdownItem extends Component {
   constructor(props) {
@@ -14,15 +13,9 @@ export default class CountdownItem extends Component {
     let currentDigit = digit;
     let previousDigit = digit + 1;
 
-    if (unit !== 'Hours') {
-      previousDigit = previousDigit === 60 ? 0 : previousDigit;
-    } else {
-      previousDigit = previousDigit === 24 ? 0 : previousDigit;
-    }
-
-    currentDigit = clockFormat(currentDigit);
-    previousDigit = clockFormat(previousDigit);
-
+    currentDigit = clockFormat(currentDigit, unit, '');
+    previousDigit = clockFormat(previousDigit, unit, 'isPrevious');
+    
     const digit1 = shuffle ? previousDigit : currentDigit;
     const digit2 = !shuffle ? previousDigit : currentDigit;
 
