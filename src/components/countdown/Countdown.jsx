@@ -67,7 +67,6 @@ export default class Countdown extends Component {
     const {bgImage} = this.props;
     const {distance, days, daysShuffle, hours, hoursShuffle, minutes, minutesShuffle, seconds, secondsShuffle} = this.state;
     const header = distance ? "We're launching soon" : "Time's Up!";
-    console.log(distance);
     return (
       <main className="countdown" style={{ 
         backgroundImage: `url(${bgImage})`,
