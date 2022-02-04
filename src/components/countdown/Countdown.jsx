@@ -7,7 +7,7 @@ export default class Countdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      endDate: new Date("Feb 01, 2022 00:00:00").getTime(),
+      endDate: new Date("Feb 14, 2022 00:00:00").getTime(),
       // endDate: new Date("Oct 23, 2021 22:33:00").getTime(),
       distance: true,
       days: 0,
